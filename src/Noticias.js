@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
-import './Noticias.css';
+import './Noticias.scss';
 import Noticia from './Noticia';
 
-const URL = 'http://10.1.15.86:8000/api/v1/noticias/cheio'
+const URL = 'http://testephp.itec.al.gov.br/api/v1/noticias'
 
 
 class Noticias extends Component {
@@ -19,6 +19,7 @@ class Noticias extends Component {
       .then(resp => {
         this.setState({ ...this.state, list: resp.data })
       })
+      .catch( err => console.log(err) )
   }
 
   render() {
